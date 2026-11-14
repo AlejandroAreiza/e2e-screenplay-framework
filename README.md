@@ -1,4 +1,4 @@
-# Sporty QA Home Assignmen
+# Single Bet Placement
 
 
 
