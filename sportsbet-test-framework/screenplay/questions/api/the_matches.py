@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from datetime import date
-from http import HTTPMethod
 from typing import Any
 
 from config.endpoints import Endpoints
-from screenplay.abilities import CallAnApi
+from screenplay.actions.api import Get
 from screenplay.actor import Actor
 from screenplay.interfaces import Question
 
@@ -22,7 +21,7 @@ class TheMatches(Question):
         return "the upcoming matches" if self.only_upcoming else "the matches"
 
     def answered_by(self, actor: Actor) -> list[dict[str, Any]]:
-        response = actor.ability_to(CallAnApi).send(HTTPMethod.GET, Endpoints.MATCHES)
+        response = actor.attempts_to(Get.resource(Endpoints.MATCHES))
         response.raise_for_status()
         matches = response.json()
         if self.only_upcoming:
