@@ -68,8 +68,8 @@ sportsbet-test-framework/
 ## Setup
 
 ```bash
-git clone https://github.com/AlejandroAreiza/sporty-home-assignment.git
-cd sporty-home-assignment/sportsbet-test-framework
+git clone https://github.com/AlejandroAreiza/python-screenplay-framework.git
+cd python-screenplay-framework/sportsbet-test-framework
 uv sync
 cp .env.example .env
 ```
@@ -79,7 +79,7 @@ Set your values in `.env`:
 | Variable | Description |
 |----------|-------------|
 | `QA_BASE_URL` | Application URL, e.g. `https://qae-assignment-tau.vercel.app` |
-| `QA_USER_ID` | Your candidate user ID |
+| `QA_USER_ID` | Your user ID for the application (sent as the `x-user-id` header) |
 
 ## Run
 
